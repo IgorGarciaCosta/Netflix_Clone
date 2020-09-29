@@ -1,5 +1,5 @@
 const API_KEY = '01aa316fe101b8eea45035bdbfdfb084';
-const API_BASE = 'https://api.themoviedb.org/3/';
+const API_BASE = 'https://api.themoviedb.org/3';
 
 //pega os originais netflix, os recomendados(trending), os em alta(top rated)
 //ação, comedia, terror, romance, documentarios
@@ -18,7 +18,7 @@ export default {
           slug:'originals',//pega determinada parte da url
           title:'Originais Netflix',
           items: await basicFetch(`/discover/tv?with_network=213&language=pt-BR&api_key=${API_KEY}`)
-        }
+        },
 
 
         {
@@ -30,7 +30,7 @@ export default {
         {
           slug:'toprated',
           title: 'Em alta',
-          items:awat basicFetch(`/movie/top_rated?langage=pt-BR&api_key=${API_KEY}`)
+          items: await basicFetch(`/movie/top_rated?langage=pt-BR&api_key=${API_KEY}`)
         },
 
         {
