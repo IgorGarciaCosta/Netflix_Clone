@@ -6,9 +6,7 @@ const API_BASE = 'https://api.themoviedb.org/3';
 
 //junta a url base com a pesquisa a ser feita e retorna o json recebido
 const basicFetch = async(endpoint)=>{
-  const req = await fetch(`${API_BASE}${endpoint}`);
-  const json = await req.json();
-  return json;
+  return (await fetch(`${API_BASE}${endpoint}`)).json();
 }
 
 export default {
@@ -75,7 +73,7 @@ export default {
         break;
 
         case 'tv':
-            info = await basicFetch(`/movie/${movieId}?language=pt-BR&api_key=${API_KEY}`);
+            info = await basicFetch(`/tv/${movieId}?language=pt-BR&api_key=${API_KEY}`);
 
         break;
 
