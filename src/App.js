@@ -4,6 +4,7 @@ import MovieRow from './components/MovieRow'
 import './App.css'
 import FeaturedMovie from './components/FeaturedMovie'
 import Header from './components/Header'
+import Footer from './components/Footer'
 
 export default()=>{
 
@@ -28,7 +29,6 @@ export default()=>{
       let chosenInfo = await Tmdb.getMovieInfo(chosen.id, 'tv')
       setFeaturedData(chosenInfo)
 
-      console.log({featuredData})
 
     }
 
@@ -60,6 +60,8 @@ export default()=>{
             <MovieRow key={key} title={item.title} items={item.items}/>
           ))}
       </section>
+
+      <Footer/>
     </div>
   )
 }
