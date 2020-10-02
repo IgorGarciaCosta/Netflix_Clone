@@ -19,7 +19,7 @@ export default()=>{
     const loadAll = async()=>{
       //pega lista dos filmes
       let list = await Tmdb.getHomeList();
-      setMovieList(list)
+      //setMovieList(list)
 
       //pegar o filme em destaque (featured)
       let originals = list.filter(i=>i.slug === 'originals')
@@ -27,7 +27,7 @@ export default()=>{
       let randomChosen = Math.floor(Math.random()*(originals[0].items.results.length-1))
       let chosen = originals[0].items.results[randomChosen]
       let chosenInfo = await Tmdb.getMovieInfo(chosen.id, 'tv')
-      setFeaturedData(chosenInfo)
+    //  setFeaturedData(chosenInfo)
 
 
     }
@@ -62,6 +62,9 @@ export default()=>{
       </section>
 
       <Footer/>
+      <div className="loading">
+        <img src="https://www.filmelier.com/pt/br/news/wp-content/uploads/2020/03/netflix-loading.gif"/>
+      </div>
     </div>
   )
 }
